@@ -25,7 +25,7 @@ public class Main {
 
         try {
             ObjectOutputStream customerWriter = new ObjectOutputStream(new FileOutputStream("Customers"));
-            for (int i=0; i<=9; i++){
+            for (int i=0; i<=9; i++) {
                 customerWriter.writeObject(cusQue.dequeue());
             }
             customerWriter.close();
@@ -37,7 +37,7 @@ public class Main {
 
         try {
             ObjectInputStream customerReader = new ObjectInputStream(new FileInputStream("Customers"));
-            for (int i=0; i<=9; i++){
+            for (int i=0; i<=9; i++) {
                 Customer toQueue = (Customer) customerReader.readObject();
                 cusQue.enqueue(toQueue);
                 toQueue.getNameOfCustomer(); toQueue.getCustomerID(); toQueue.getAccount();
