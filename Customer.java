@@ -1,4 +1,6 @@
-public class Customer {
+import java.io.Serializable;
+
+public class Customer implements Serializable {
 
     public Customer(String aName,Integer cusID, Accounts anAccount){
         nameOfCustomer = aName;
@@ -7,7 +9,7 @@ public class Customer {
     }
 
     private Accounts userAccount;
-    public void getAccount(){
+    public void getAccount() {
         Statements<Accounts> accPrinter = new Statements<>();
         accPrinter.printStatement(userAccount);
     }
@@ -16,7 +18,7 @@ public class Customer {
     public void setNameOfCustomer(String cusName){
         nameOfCustomer = cusName;
     }
-    public void getNameOfCustomer(){
+    public void getNameOfCustomer() {
         System.out.println("Name of user is: " + nameOfCustomer);
     }
 
@@ -24,7 +26,7 @@ public class Customer {
     public void setCustomerID(Integer cusNum){
         customerID = cusNum;
     }
-    public void getCustomerID(){
+    public void getCustomerID() {
         System.out.println("Customer's ID is: " + customerID);
     }
 }
