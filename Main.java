@@ -1,3 +1,4 @@
+//Momen Suliman
 import java.io.*;
 public class Main {
     public static void sop(String s) {
@@ -37,10 +38,16 @@ public class Main {
 
         try {
             ObjectInputStream customerReader = new ObjectInputStream(new FileInputStream("Customers"));
+            Statements<Accounts> accPrinter = new Statements<>();
+            Checking needInfo;
             for (int i=0; i<=9; i++) {
                 Customer toQueue = (Customer) customerReader.readObject();
                 cusQue.enqueue(toQueue);
-                toQueue.getNameOfCustomer(); toQueue.getCustomerID(); toQueue.getAccount();
+                needInfo = (Checking) toQueue.getAccount();
+                sop("Name of customer is " + toQueue.getNameOfCustomer());
+                sop("Customer's ID is " + toQueue.getCustomerID());
+                sop("User's account number is " + needInfo.getAccountNumber());
+                sop("User's balance is $" + needInfo.getBalance() + "\n");
             }
             customerReader.close();
 
