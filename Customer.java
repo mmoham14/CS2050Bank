@@ -9,6 +9,9 @@ public class Customer implements Serializable {
     }
 
     private Accounts userAccount;
+    public void setUserAccount(Accounts cusAcc) {
+        userAccount = cusAcc;
+    }
     public Accounts getAccount() {
         return userAccount;
     }
@@ -27,5 +30,11 @@ public class Customer implements Serializable {
     }
     public Integer getCustomerID() {
         return customerID;
+    }
+    public Integer getCustomerAccountNumber() {
+        return userAccount.getAccountNumber();
+    }
+    public Double getCustomerBalance() {
+        return userAccount.getBalance();
     }
 }

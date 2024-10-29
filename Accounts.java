@@ -11,7 +11,7 @@ public abstract class Accounts implements Serializable {
         return accountNumber;
     }
 
-    private Double balance=0.0;
+    private Double balance = 0.0;
     public void setBalance(Double editBalance){
         balance = balance + editBalance;
     }

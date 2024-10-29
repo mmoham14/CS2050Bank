@@ -7,7 +7,7 @@ public class Statements <T extends Accounts> {
     }
     public void printStatement(T accToPrint) {
         infoToPrint = accToPrint;
-        Main.sop("User's account number is " + infoToPrint.getAccountNumber());
-        Main.sop("User's balance is $" + infoToPrint.getBalance() + "\n");
+        Program7.sop("User's account number is " + infoToPrint.getAccountNumber());
+        Program7.sop("User's balance is $" + infoToPrint.getBalance() + "\n");
     }
 }
